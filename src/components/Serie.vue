@@ -33,7 +33,7 @@ export default {
   methods: {
     async cargarSeries() {
       try {
-        const res = await fetch('series.json');
+        const res = await fetch(fetch(`${import.meta.env.BASE_URL}series.json`));
         this.series = await res.json();
 
         const serie = this.series.find(s => s.id === this.serieId);
