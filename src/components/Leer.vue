@@ -107,7 +107,7 @@ export default {
     },
     async fetchSerieInfo() {
       try {
-        const res = await fetch('/series.json');
+        const res = await fetch('series.json');
         this.series = await res.json();
         const serie = this.series.find(s => s.id === this.id);
 
@@ -166,11 +166,11 @@ export default {
     }
   },
   watch: {
-  '$route.params.cap'(newCap) {
-    this.capitulo = newCap || '';
-    this.imagenes = [];
-    this.urlsPendientes = [];
-    this.fetchSerieInfo();
+    // Cuando cambia capitulo, recarga imágenes
+    capitulo(newCap) {
+      this.imagenes = [];
+      this.urlsPendientes = [];
+      this.fetchSerieInfo();
     }
   },
   mounted() {
