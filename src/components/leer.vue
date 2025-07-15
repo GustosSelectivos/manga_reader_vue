@@ -166,11 +166,11 @@ export default {
     }
   },
   watch: {
-    // Cuando cambia capitulo, recarga imágenes
-    capitulo(newCap) {
-      this.imagenes = [];
-      this.urlsPendientes = [];
-      this.fetchSerieInfo();
+  '$route.params.cap'(newCap) {
+    this.capitulo = newCap || '';
+    this.imagenes = [];
+    this.urlsPendientes = [];
+    this.fetchSerieInfo();
     }
   },
   mounted() {
