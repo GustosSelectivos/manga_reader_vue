@@ -9,9 +9,20 @@ const routes = [
   { path: '/leer/:id/:cap?', component: Leer },
 ];
 
+<<<<<<< Updated upstream
 const router = createRouter({
   history: createWebHistory("/manga_reader_vue"),
   routes,
 });
 
+=======
+import { createWebHashHistory } from 'vue-router';
+
+const router = createRouter({
+  history: createWebHashHistory('/manga_reader_vue/'),
+  routes,
+});
+
+
+>>>>>>> Stashed changes
 export default router;
