@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.seccion-tipo {
+  margin-bottom: 40px;
+}
+
+.tarjeta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  min-height: 100px;
+}
+
+.tarjeta-serie {
+  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-serie:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta-imagen {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-titulo {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.tarjeta-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 100%);
+  box-sizing: border-box;
+  border-radius: 0 0 8px 8px;
+
+}
+
+.tarjeta-texto h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.lector img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.tipo-manhwa .lector img,
+.tipo-manhua .lector img {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.lector {
+  max-width: 900px;
+  margin: auto;
+  /*padding: 1rem*/;
+}
+
+.estado-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.estado-tag.finalizado {
+  background-color: #e74c3c; /* rojo */
+}
+
+.estado-tag.publicandose {
+  background-color: #27ae60; /* verde */
+}
+
+.estado-tag.pausa {
+  background-color: #f1c40f; /* amarillo */
+  color: #333; /* texto oscuro para contraste */
+}
+
+.navegacion-capitulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.navegacion-capitulos button,
+.navegacion-capitulos select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.navegacion-capitulos.inferior {
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .tarjeta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
